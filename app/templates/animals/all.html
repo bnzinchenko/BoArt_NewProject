@@ -1,0 +1,41 @@
+{% extends 'main/base.html' %}}
+
+{% block title %}Реестр{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/blocks/table.css') }}"
+      xmlns="http://www.w3.org/1999/html">
+
+<script src="https://kit.fontawesome.com/097af908f7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css">
+
+{% endblock %}
+
+{% block content %}
+<div class="table-responsive custom-table-responsive">
+    <table class="table custom-table">
+        <thead>
+
+                <th scope="col">Преподавать</th>
+                <th scope="col">Тема</th>
+                <th scope="col">Студент</th>
+                {% if current_user.is_authenticated %}<th scope="col">Действие</th>{% endif %}
+        </thead>
+        <tbody>
+            {% for animal in animals %}
+            <tr scope="row">
+                <td>{{ post.teacher }}</td>
+                <td>{{ post.subject }}</td>
+                <td>{{ post.student }}</td>
+                {% if current_user.is_authenticated %}
+                    <td>
+                    <a href="" class="btn btn-sm btn-secondary"><i class ="fa fa-edit"></i></a>
+                    <a href="" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></a>
+                    </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
