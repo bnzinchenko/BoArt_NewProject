@@ -12,7 +12,7 @@ def all():
         animal = Animal.query.order_by(Animal.id).all()
         return render_template('animals/all.html',animal=animal)
 
-@animal.route('/animal/create')
+@animal.route('/animal/create',  methods=['POST', 'GET'])
 @login_required
 def create():
     form = AnimalForm()

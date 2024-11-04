@@ -11,4 +11,6 @@ class Animal(db.Model):
     AnimalGender = db.Column(db.String(250))
     Measure = db.Column(db.Integer)
     ComplexDate = db.Column(db.DateTime, default=datetime.utcnow)
-    AnimalKeepingLocation = db.Column(db.String(250))
+    UNSM = db.Column(db.String(11))
+    DopNumber = db.Column(db.String(20))
+    UNZH = db.Column(db.String(15))

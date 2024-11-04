@@ -7,6 +7,7 @@ from .config import Config
 
 from .routes.user import user
 from .routes.animal import animal
+from .routes.organization import organization
 
 
 def create_app(config_class=Config):
@@ -15,6 +16,7 @@ def create_app(config_class=Config):
 
     app.register_blueprint(user)
     app.register_blueprint(animal)
+    app.register_blueprint(organization)
 
     db.init_app(app)
     migrate.init_app(app, db)

@@ -32,7 +32,6 @@ class LoginForm(FlaskForm):
 
 
 class AnimalForm(FlaskForm):
-    AnimalKeepingLocation = StringField('Место рождения', validators=[DataRequired(), Length(min=2, max=20)])
     Ind_or_group = SelectField('Индивидуальный или групповой метод', choices=Dictionary.i_g, render_kw={'class': 'form-control'})
     AnimalSpecies = SelectField('Вид животного', choices=Dictionary.animal_species, render_kw={'class': 'form-control'})
     AnimalBreed = SelectField('Порода животного', choices=Dictionary.breed, render_kw={'class': 'form-control'})
@@ -40,3 +39,11 @@ class AnimalForm(FlaskForm):
     AnimalGender = SelectField('Пол животного', choices=Dictionary.gender, render_kw={'class': 'form-control'})
     Measure = IntegerField('Вес животного')
     ComplexDate = DateField('Дата Рождения',default=date.today)
+    AnimalKeepingLocation = StringField('Место содержания', validators=[DataRequired(), Length(min=2, max=20)])
+
+class OrganizationForm(FlaskForm):
+    Region = StringField('Регион РФ', validators=[DataRequired(), Length(min=2, max=20)])
+    Area = StringField('Район субъекта', validators=[DataRequired(), Length(min=2, max=20)])
+    AnimalKeepingLocation = StringField('Место содержания', validators=[DataRequired(), Length(min=2, max=20)])
+    AnimalBornLocation = StringField('Место рождения', validators=[DataRequired(), Length(min=2, max=20)])
+    Owner = StringField('ФИО Владельца', validators=[DataRequired(), Length(min=2, max=20)])
