@@ -4,9 +4,24 @@
 
 {% block content %}
 
-<form method ="post" class="form-control d-flex flex-column gap-2">
-    <input name="subject" type="text" placeholder="УНСМ средства маркирования" class="form-control">
+    <form method="post" enctype="multipart/form-data" class="form-control d-flex flex-column gap-2">
+
+
+        {{ form.AnimalKeepingLocation(class="form-control", placeholder="Выберите место рождения") }}
+        <br>
+        <label>Выберите тип учета</label>
+        {{ form.Ind_or_group(class="form-control", placeholder = "Выберите тип учета") }}
+        <label>Выберите вид животного</label>
+        {{ form.AnimalSpecies(class="form-control", placeholder="Выберите вид животного") }}
+        <label>Выберите породу и масть животного</label>
+        {{ form.AnimalBreed(class="form-control", placeholder="Выберите породу животного") }}
+        {{ form.AnimalColour(class="form-control", placeholder="Укажите масть животного") }}
+        <label>Выберите пол животного</label>
+        {{ form.AnimalGender(class="form-control", placeholder="Укажите масть животного") }}
+        {{ form.Measure(class="form-control", placeholder="Укажите вес животного") }}
+        <label>Укажите дату рождения</label>
+        {{ form.ComplexDate(class="form-control", placeholder="Укажите дату рождения животного") }}
 
     <input value="Добавить" type="submit" class="btn btn-success">
-</form>
+    </form>
 {% endblock %}

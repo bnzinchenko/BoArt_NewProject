@@ -8,7 +8,6 @@ class Animal(db.Model):
     AnimalSpecies = db.Column(db.String(250))
     AnimalBreed = db.Column(db.String(250))
     AnimalColour = db.Column(db.String(250))
-    AnimalName = db.Column(db.String(250))
     AnimalGender = db.Column(db.String(250))
     Measure = db.Column(db.Integer)
     ComplexDate = db.Column(db.DateTime, default=datetime.utcnow)

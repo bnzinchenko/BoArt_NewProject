@@ -6,7 +6,6 @@
     <form method="post" enctype="multipart/form-data" class="form-control d-flex flex-column gap-2">
         {{ form.csrf_token }}
         {{ form.name(class="form-control", placeholder="ФИО") }}
-
         {{ form.login(class="form-control", placeholder="Логин") }}
         {% if form.login.errors %}
             <div class="invalid-feedback" style="display: block!important;">

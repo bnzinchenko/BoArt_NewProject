@@ -14,11 +14,15 @@
 {% block content %}
 <div class="table-responsive custom-table-responsive">
     <table class="table custom-table">
-        <thead>
+        <thead class = 'table_header'>
 
-                <th scope="col">Преподавать</th>
-                <th scope="col">Тема</th>
-                <th scope="col">Студент</th>
+                <th scope="col">Хозяйствующий субъект</th>
+                <th scope="col">УНСМ животного</th>
+                <th scope="col">Дополниельный номер СМ</th>
+                <th scope="col">Вид животного</th>
+                <th scope="col">Пол животного</th>
+                <th scope="col">Дата рождения</th>
+                <th scope="col">УИН животного</th>
                 {% if current_user.is_authenticated %}<th scope="col">Действие</th>{% endif %}
         </thead>
         <tbody>
